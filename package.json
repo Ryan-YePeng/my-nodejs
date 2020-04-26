@@ -4,7 +4,8 @@
   "description": "my first node.js project",
   "main": "app.js",
   "scripts": {
-    "start": "node ./app.js"
+    "start": "node ./app.js",
+    "server": "supervisor ./app.js"
   },
   "author": "Ryan",
   "license": "ISC",

@@ -7,7 +7,7 @@ const app = express();
 
 // 配置
 require("./config/http")(app); // 跨域
-require("./mongodb"); // MongoDB
+require("./config/mongodb"); // MongoDB
 require('./passport')(passport); // 验证token
 
 
@@ -23,7 +23,14 @@ app.use(passport.initialize());
 app.use(require('./controllers/user'));
 app.use('/upload', require('./controllers/upload'));
 
+
 // 创建服务器
 app.listen(3000, () => {
   console.log(`启动成功：http://localhost:3000`);
+});
+
+
+// 捕获异常
+process.on('uncaughtException', (err) => {
+  console.log('Caught Exception: ' + err);
 });

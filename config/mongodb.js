@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-const mongodbURL = require("../config/mongodbURL").mongodbURL;
+const mongodb = "mongodb://localhost/blog";
 
 mongoose.set('useCreateIndex', true);
-mongoose.connect(mongodbURL, {
+mongoose.connect(mongodb, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
